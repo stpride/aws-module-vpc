@@ -36,7 +36,7 @@ resource "aws_eip" "nat" {
 }
 
 module "public_subnet" {
-  source = "git@github.com:stpride/aws-module-public-subnet.git"
+  source = "git::https://github.com/stpride/aws-module-public-subnet.git"
   name   = var.name
   cidrs  = var.public
   zones  = var.zones
@@ -59,7 +59,7 @@ resource "aws_nat_gateway" "natgw" {
 }
 
 module "private_subnet" {
-  source = "git@github.com:stpride/aws-module-private-subnet.git"
+  source = "git::https://github.com/stpride/aws-module-private-subnet.git"
   name   = var.name
   cidrs  = var.private
   zones  = var.zones
